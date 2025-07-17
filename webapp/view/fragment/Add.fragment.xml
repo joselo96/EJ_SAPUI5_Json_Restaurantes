@@ -1,0 +1,52 @@
+<Dialog
+    xmlns:odata="sap.ui.comp.odata"
+    xmlns:content="sap.ui.mdc.valuehelp.content"
+    xmlns:smartfield="sap.ui.comp.smartfield"
+    xmlns:unified="sap.ui.unified"
+    id="AddDialog"
+    title="Nuego Restaurante"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:c="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+>
+
+    <content>
+        <form:SimpleForm id="FormUpdateRestaurant">
+            <Label id="_IDGenLabel5" text="Nombre del Restaurante" />
+            <Input id="IdFgNombre" value="{mModeloDatos>/nuevoRestaurante/Nombre}" />
+
+            <Label id="_IDGenLabel6" text="Ubicacion" />
+            <Input id="IdFgUbicacion" value="{mModeloDatos>/nuevoRestaurante/Ubicación}" />
+
+            <Label id="IdLabel1" text="Numero de estrellas" />
+            <RatingIndicator id="RatingInd" iconSize="17px" editable="true"
+                value="{mModeloDatos>/nuevoRestaurante/Estrellas}" />
+
+            <Label id="IDLabel2" text="Platos disponibles"></Label>
+            <Input id="IdFgPlatos" type="Number" maxLength="2"
+                value="{mModeloDatos>/nuevoRestaurante/Cantidad_de_platos}"></Input>
+
+            <Label id="_IDGenLabel3" text="Precios" />
+            <ComboBox id="IdComboBox" value="{mModeloDatos>/nuevoRestaurante/Rango_de_precios}">
+                <items>
+                    <!-- -->
+                    <c:Item id="_IDGenItem" text="Alto" />
+                    <c:Item id="_IDGenItem2" text="Medio" />
+                    <c:Item id="_IDGenItem3" text="Bajo" />
+                </items>
+            </ComboBox>
+
+            <Label id="_IDGeniLabel5" text="Numero de Telefono" />
+            <Input id="IdFgTelefono" type="Number" value="{mModeloDatos>/nuevoRestaurante/Teléfono}" />
+
+            <Label id="_IDGdnLabel6" text="Sitio Web" />
+            <Input id="IdFgSitioWeb" value="{mModeloDatos>/nuevoRestaurante/Sitio_web}" />
+        </form:SimpleForm>
+    </content>
+    <buttons>
+        <Button id="_IDGenButton" text="Agregar" press="OnAddRestaurant" />
+        <Button id="_IDGenButton2" text="Cancelar" press="onCloseDialog" />
+    </buttons>
+</Dialog>

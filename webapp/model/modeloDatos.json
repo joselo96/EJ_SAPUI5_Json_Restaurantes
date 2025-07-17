@@ -1,0 +1,215 @@
+{
+"Restaurantes": [
+    {
+        "Nombre": "La Cosecha",
+        "Ubicación": "Bogotá, Colombia",
+        "Estrellas": 4.5,
+        "Cantidad_de_platos": 32,
+        "Tipo_de_comida": "Colombiana",
+        "Rango_de_precios": "Medio",
+        "Teléfono":  3113456789,
+        "Sitio_web": "https://www.lacosecha.com"
+    },
+    {
+        "Nombre": "Pasta & Vino",
+        "Ubicación": "Medellín, Colombia",
+        "Estrellas": 4.8,
+        "Cantidad_de_platos": 25,
+        "Tipo_de_comida": "Italiana",
+        "Rango_de_precios": "Alto",
+        "Teléfono":  3142345678,
+        "Sitio_web": "https://www.pastayvino.com"
+    },
+    {
+        "Nombre": "Sabor Costeño",
+        "Ubicación": "Barranquilla, Colombia",
+        "Estrellas": 4.2,
+        "Cantidad_de_platos": 28,
+        "Tipo_de_comida": "Caribeña",
+        "Rango_de_precios": "Medio",
+        "Teléfono":  3158765432,
+        "Sitio_web": "https://www.saborcosteno.co"
+    },
+    {
+        "Nombre": "Tokyo Sushi Bar",
+        "Ubicación": "Cali, Colombia",
+        "Estrellas": 4.7,
+        "Cantidad_de_platos": 40,
+        "Tipo_de_comida": "Japonesa",
+        "Rango_de_precios": "Alto",
+        "Teléfono":  3121234567,
+        "Sitio_web": "https://www.tokyosushibar.com"
+    },
+    {
+        "Nombre": "El Patio Vegano",
+        "Ubicación": "Bogotá, Colombia",
+        "Estrellas": 4.3,
+        "Cantidad_de_platos": 21,
+        "Tipo_de_comida": "Vegana",
+        "Rango_de_precios": "Medio",
+        "Teléfono":  3119876543,
+        "Sitio_web": "https://www.elpatiovegano.co"
+    },
+    {
+        "Nombre": "Café París",
+        "Ubicación": "Cartagena, Colombia",
+        "Estrellas": 4.6,
+        "Cantidad_de_platos": 18,
+        "Tipo_de_comida": "Francesa",
+        "Rango_de_precios": "Alto",
+        "Teléfono":  3151122334,
+        "Sitio_web": "https://www.cafeparis.com"
+    },
+    {
+        "Nombre": "Don Arepa",
+        "Ubicación": "Bucaramanga, Colombia",
+        "Estrellas": 4.0,
+        "Cantidad_de_platos": 15,
+        "Tipo_de_comida": "Colombiana",
+        "Rango_de_precios": "Bajo",
+        "Teléfono":  3179988776,
+        "Sitio_web": "https://www.donarepa.com"
+    },
+    {
+        "Nombre": "Grill Master",
+        "Ubicación": "Medellín, Colombia",
+        "Estrellas": 4.4,
+        "Cantidad_de_platos": 30,
+        "Tipo_de_comida": "Parrilla",
+        "Rango_de_precios": "Medio",
+        "Teléfono":  3145678901,
+        "Sitio_web": "https://www.grillmaster.co"
+    },
+    {
+        "Nombre": "Tandoori Nights",
+        "Ubicación": "Bogotá, Colombia",
+        "Estrellas": 4.9,
+        "Cantidad_de_platos": 36,
+        "Tipo_de_comida": "Hindú",
+        "Rango_de_precios": "Alto",
+        "Teléfono":  3115566778,
+        "Sitio_web": "https://www.tandoorinights.com"
+    },
+    {
+        "Nombre": "La Taquería",
+        "Ubicación": "Cali, Colombia",
+        "Estrellas": 4.1,
+        "Cantidad_de_platos": 20,
+        "Tipo_de_comida": "Mexicana",
+        "Rango_de_precios": "Medio",
+        "Teléfono":  3123344556,
+        "Sitio_web": "https://www.lataqueria.com.co"
+    },
+    {
+        "Nombre": "Green Bowl",
+        "Ubicación": "Bogotá, Colombia",
+        "Estrellas": 4.3,
+        "Cantidad_de_platos": 17,
+        "Tipo_de_comida": "Saludable",
+        "Rango_de_precios": "Medio",
+        "Teléfono":  3118761234,
+        "Sitio_web": "https://www.greenbowl.co"
+    },
+    {
+        "Nombre": "Burger Joint",
+        "Ubicación": "Medellín, Colombia",
+        "Estrellas": 4.2,
+        "Cantidad_de_platos": 22,
+        "Tipo_de_comida": "Americana",
+        "Rango_de_precios": "Medio",
+        "Teléfono":  3141122443,
+        "Sitio_web": "https://www.burgerjoint.com"
+    },
+    {
+        "Nombre": "Wok & Roll",
+        "Ubicación": "Bogotá, Colombia",
+        "Estrellas": 4.5,
+        "Cantidad_de_platos": 34,
+        "Tipo_de_comida": "Asiática Fusión",
+        "Rango_de_precios": "Medio",
+        "Teléfono":  3116655443,
+        "Sitio_web": "https://www.woknroll.co"
+    },
+    {
+        "Nombre": "Casa Tapas",
+        "Ubicación": "Cartagena, Colombia",
+        "Estrellas": 4.6,
+        "Cantidad_de_platos": 27,
+        "Tipo_de_comida": "Española",
+        "Rango_de_precios": "Alto",
+        "Teléfono":  3154433221,
+        "Sitio_web": "https://www.casatapas.com"
+    },
+    {
+        "Nombre": "La Fonda Paisa",
+        "Ubicación": "Medellín, Colombia",
+        "Estrellas": 4.0,
+        "Cantidad_de_platos": 19,
+        "Tipo_de_comida": "Antioqueña",
+        "Rango_de_precios": "Bajo",
+        "Teléfono":  3149988771,
+        "Sitio_web": "https://www.lafondapaisa.co"
+    },
+    {
+        "Nombre": "Delicias del Mar",
+        "Ubicación": "Santa Marta, Colombia",
+        "Estrellas": 2.5,
+        "Cantidad_de_platos": 29,
+        "Tipo_de_comida": "Mariscos",
+        "Rango_de_precios": "Alto",
+        "Teléfono":  3153344556,
+        "Sitio_web": "https://www.deliciasdelmar.co"
+    },
+    {
+        "Nombre": "Urban Thai",
+        "Ubicación": "Bogotá, Colombia",
+        "Estrellas": 3,
+        "Cantidad_de_platos": 23,
+        "Tipo_de_comida": "Tailandesa",
+        "Rango_de_precios": "Medio",
+        "Teléfono":  3113344557,
+        "Sitio_web": "https://www.urbanthai.com"
+    },
+    {
+        "Nombre": "Rústico Bistro",
+        "Ubicación": "Manizales, Colombia",
+        "Estrellas": 4.3,
+        "Cantidad_de_platos": 24,
+        "Tipo_de_comida": "Fusión",
+        "Rango_de_precios": "Medio",
+        "Teléfono":  3169988772,
+        "Sitio_web": "https://www.rusticobistro.com"
+    },
+    {
+        "Nombre": "El Rincón Árabe",
+        "Ubicación": "Bogotá, Colombia",
+        "Estrellas": 4.5,
+        "Cantidad_de_platos": 31,
+        "Tipo_de_comida": "Árabe",
+        "Rango_de_precios": "Medio",
+        "Teléfono":  3117654321,
+        "Sitio_web": "https://www.elrinconarabe.co"
+    },
+    {
+        "Nombre": "Masa Madre",
+        "Ubicación": "Pereira, Colombia",
+        "Estrellas": 4.2,
+        "Cantidad_de_platos": 16,
+        "Tipo_de_comida": "Panadería / Brunch",
+        "Rango_de_precios": "Bajo",
+        "Teléfono":  3161122334,
+        "Sitio_web": "https://www.masamadre.co"
+    }
+
+],
+"nuevoRestaurante":{
+        "Nombre": "",
+        "Ubicación": "",
+        "Estrellas": null,
+        "Cantidad_de_platos": null,
+        "Tipo_de_comida": "",
+        "Rango_de_precios": "",
+        "Teléfono":  null,
+        "Sitio_web": ""
+}
+}

@@ -1,0 +1,37 @@
+    <Dialog xmlns:unified="sap.ui.unified" id="UpdateRestaurant" title="Modificar Restaurante" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:c="sap.ui.core">
+        <content>
+            <form:SimpleForm id="formUpdateRestaurant">
+                <Label id="_IDGenLab1el5" text="Nombre del Restaurante"/>
+                <Input id="_IDGenInp1ut" value="{mModeloDatos>/nuevoRestaurante/Nombre}"/>
+
+                <Label id="_IDGe1nLabel6" text="Ubicacion"/>
+                <Input id="_IDG1enInput1" value="{mModeloDatos>/nuevoRestaurante/Ubicación}"/>
+               
+                <Label id="IdLa1bel1" text="Numero de estrellas"/>
+                <RatingIndicator id="Ratin1gInd" iconSize="17px"  editable="true" />
+
+                <Label id="IDL1abel2" text="Platos disponibles"></Label>
+                <Input id="_IDG1enInput2" type="Number" maxLength="2" value="{mModeloDatos>/nuevoRestaurante/Cantidad_de_platos}"/>
+
+                <Label id="_IDGenL1abel3" text="Precios"/>
+                <ComboBox id="Combo1Box"  value="{mModeloDatos>/nuevoRestaurante/Rango_de_precios}">
+                    <items > 
+                        <!-- -->
+                        <c:Item id="_IDGen1Item" text="Alto"/>
+                        <c:Item id="_IDGen1Item2" text="Medio" />
+                        <c:Item id="_IDGe1nItem3" text="Bajo" />
+                    </items>
+			    </ComboBox>
+               
+                <Label id="_IDGeniLabel51" text="Numero de Telefono"/>
+                <Input id="_IDGenInp5ut21" type="Number" maxLength="10" value="{mModeloDatos>/nuevoRestaurante/Teléfono}"/>
+
+                <Label id="_IDGdnLabel61" text="Sitio Web"/>
+                <Input id="_IDGenfI1nput1" value="{mModeloDatos>/nuevoRestaurante/Sitio_web}"/>
+            </form:SimpleForm>
+        </content>
+        <buttons>
+            <Button id="_IDGenButton5" text="Modificar" press="OnUpdateRestaurant" />
+            <Button id="_IDGenButton3" text="Cancelar" press="onCloseDialog" />
+        </buttons>
+    </Dialog>
