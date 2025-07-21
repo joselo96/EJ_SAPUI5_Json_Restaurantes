@@ -204,10 +204,10 @@
 ],
 "nuevoRestaurante":{
         "Nombre": "",
+        "Tipo_de_comida": "",
         "Ubicación": "",
         "Estrellas": null,
         "Cantidad_de_platos": null,
-        "Tipo_de_comida": "",
         "Rango_de_precios": "",
         "Teléfono":  null,
         "Sitio_web": ""

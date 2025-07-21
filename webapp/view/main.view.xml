@@ -17,9 +17,8 @@
 				sapUiResponsivePadding--content 
 				sapUiResponsivePadding--footer">
 
-		<m:HeaderContainer id="_IDGenHeaderContainer">
-			<m:Title id="title2" text="Listado de Restaurantes" width="200px">
-			</m:Title>
+		<m:HeaderContainer id="_IDGenHeaderContainer" >
+			<m:Title id="title2" text="Listado de Restaurantes" level="H3"/> 
 		</m:HeaderContainer>
 
 
@@ -37,13 +36,17 @@
 				ariaLabelledBy="title"
 				selectionBehavior="RowOnly"
 				width="auto"
-				
+				alternateRowColors="true"
+				cellClick=""
 			>
 
 				<extension>
 
-					<m:OverflowToolbar id="_IDGenOverflowToolbar1">
-						<!--	<m:Title id="title" text="Listado de Restaurantes" width="25%"/> -->
+					<m:OverflowToolbar id="_IDGenOverflowToolbar1" height="100px" >
+						<!--<m:Image id="Image" src="https://img.freepik.com/vector-gratis/concurso-programas-cocina-tv-composicion-dibujos-animados-participantes-que-preparan-operadores-camara-chef-ensalada_1284-27806.jpg"></m:Image>
+							<m:Title id="title" text="Listado de Restaurantes" width="25%"/> -->
+						<!--	<c:Icon id="Icon" src="sap-icon://business-one" size="60px"></c:Icon>-->
+						<m:Title id="title" text="{i18n>appDescription}" width="25%" level="H1"/> 
 					</m:OverflowToolbar>
 
 					<m:OverflowToolbar id="_IDGenOverflowToolbar" style="Clear">
@@ -68,7 +71,7 @@
 							tooltip="Agregar Producto"
 							press="OnOpenFragment"
 							type="Accept"
-							text="Agregar"
+							
 						/>
 						<m:Button
 							id="_IDGenButton8"
@@ -76,7 +79,7 @@
 							type="Attention"
 							tooltip="Actualizar Producto"
 							press="OnOpenFragmentUpdate"
-							text="Actualizar"
+							
 						/>
 						<m:Button
 							id="_IDGenButton1"
@@ -84,7 +87,7 @@
 							tooltip="Eliminar Producto"
 							type="Reject"
 							press="OnDeleteRestaurant"
-							text="Eliminar"
+							
 						/>
 					</m:OverflowToolbar>
 
@@ -96,6 +99,13 @@
 						<m:Label id="_IDGenLabel1" text="Nombre" />
 						<template>
 							<m:Text id="_IDGenText" text="{mModeloDatos>Nombre}" wrapping="false" />
+						</template>
+					</Column>
+					<Column id="_IDGen1Column" width="auto" showSortMenuEntry="false"
+						sortProperty="Nombre" hAlign="Center">
+						<m:Label id="_IDGen1Label1" text="Tipo de Comida" />
+						<template>
+							<m:Text id="_IDGen1Text" text="{mModeloDatos>Tipo_de_comida}" wrapping="false" />
 						</template>
 					</Column>
 					<Column id="_IDGenColumn2" width="auto" showSortMenuEntry="false"
@@ -129,10 +139,11 @@
 							<m:ObjectStatus id="_IDGenObjectStatus"
 								text="{mModeloDatos>Rango_de_precios}"
 								state="{
-								path: 'Available',
-								formatter: '.formatAvailableToObjectState'
-							}" />
+									path: 'WeightUnit',
+									formatter: '.formatter.weightState'
+								}" />
 						</template>
+
 					</Column>
 
 					<Column id="_IDGenColumny4" hAlign="Center" width="auto" sortProperty="phone">
@@ -140,8 +151,6 @@
 						<template>
 							<m:ObjectNumber id="_IDGenObjectNumber" number="{mModeloDatos>Teléfono}"
 								textAlign="Center" />
-							<!-- <m:Text id="_IDGenfText23" text="{mModeloDatos>Teléfono}"
-							wrapping="false"  />	-->
 						</template>
 					</Column>
 					<Column id="_IDGenColumn1" hAlign="Center" width="15rem">

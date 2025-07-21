@@ -4,11 +4,14 @@
                 <Label id="_IDGenLab1el5" text="Nombre del Restaurante"/>
                 <Input id="_IDGenInp1ut" value="{mModeloDatos>/nuevoRestaurante/Nombre}"/>
 
+                <Label id="_IDGen2Label16" text="Tipo De Comida" />
+                <Input id="IdFgTipoUp" value="{mModeloDatos>/nuevoRestaurante/Tipo_de_comida}" /> 
+
                 <Label id="_IDGe1nLabel6" text="Ubicacion"/>
                 <Input id="_IDG1enInput1" value="{mModeloDatos>/nuevoRestaurante/Ubicación}"/>
                
                 <Label id="IdLa1bel1" text="Numero de estrellas"/>
-                <RatingIndicator id="Ratin1gInd" iconSize="17px"  editable="true" />
+                <RatingIndicator id="Ratin1gInd" iconSize="17px"  editable="true" value="{mModeloDatos>/nuevoRestaurante/Estrellas}"/>
 
                 <Label id="IDL1abel2" text="Platos disponibles"></Label>
                 <Input id="_IDG1enInput2" type="Number" maxLength="2" value="{mModeloDatos>/nuevoRestaurante/Cantidad_de_platos}"/>

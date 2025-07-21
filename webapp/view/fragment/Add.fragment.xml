@@ -17,6 +17,9 @@
             <Label id="_IDGenLabel5" text="Nombre del Restaurante" />
             <Input id="IdFgNombre" value="{mModeloDatos>/nuevoRestaurante/Nombre}" />
 
+            <Label id="_IDGenLabel16" text="Tipo De Comida" />
+            <Input id="IdFgTipo" value="{mModeloDatos>/nuevoRestaurante/Tipo_de_comida}" />
+
             <Label id="_IDGenLabel6" text="Ubicacion" />
             <Input id="IdFgUbicacion" value="{mModeloDatos>/nuevoRestaurante/Ubicación}" />
 
