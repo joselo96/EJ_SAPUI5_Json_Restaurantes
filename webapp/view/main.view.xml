@@ -37,7 +37,7 @@
 				selectionBehavior="RowOnly"
 				width="auto"
 				alternateRowColors="true"
-				cellClick=""
+				cellClick="onClickCell"
 			>
 
 				<extension>
@@ -87,6 +87,22 @@
 							tooltip="Eliminar Producto"
 							type="Reject"
 							press="OnDeleteRestaurant"
+							
+						/>
+						<m:Button
+							id="_IDGenButton12"
+							icon="sap-icon://excel-attachment"
+							tooltip="Exportar a Excel"
+							type="Default"
+							press="OnExportExl"
+							
+						/>
+						<m:Button
+							id="_IDGenButton123"
+							icon="sap-icon://pdf-attachment"
+							tooltip="Exportar a pdf"
+							type="Default"
+							press="OnExportPdf"
 							
 						/>
 					</m:OverflowToolbar>

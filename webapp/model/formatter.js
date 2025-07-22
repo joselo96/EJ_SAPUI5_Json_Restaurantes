@@ -11,11 +11,7 @@ sap.ui.define([
              * @returns {sap.ui.model.json.JSONModel} The device model.
              */
             validatePrecio: function (Precio) {
-                if (Precio == "Alto") {
-                    return Precio.Error
-
-                }
-
+            
 
             }
         }

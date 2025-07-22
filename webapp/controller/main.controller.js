@@ -5,13 +5,17 @@ sap.ui.define([
     "sap/ui/model/Filter",
     "sap/ui/core/Fragment",
     "sap/m/MessageBox",
-    "inetum/restaurantes/model/formatter"
-], (Controller, MessageToast, FilterOperator, Filter, Fragment, MessageBox,formatter) => {
+    "inetum/restaurantes/model/formatter",
+    "sap/ui/export/Spreadsheet",
+
+
+], (Controller, MessageToast, FilterOperator, Filter, Fragment, MessageBox, formatter, Spreadsheet,) => {
     "use strict";
 
     return Controller.extend("inetum.restaurantes.controller.main", {
-        formatter:formatter,
+        formatter: formatter,
         onInit() {
+
         },
         onFilterName: function (oEvent) {
 
@@ -38,7 +42,6 @@ sap.ui.define([
             let oBinding = oTable.getBinding("rows");
             oBinding.filter(aFilters, "Application");
         },
-
         OnOpenFragment: function () {
             if (!this.oAddDialog) {
                 Fragment.load({
@@ -111,7 +114,7 @@ sap.ui.define([
             oModel.setProperty("/nuevoRestaurante", {
                 Nombre: oRaw.Nombre,
                 Ubicación: oRaw.Ubicación,
-                Tipo_de_comida : oRaw.Tipo_de_comida,
+                Tipo_de_comida: oRaw.Tipo_de_comida,
                 Estrellas: oRaw.Estrellas,
                 Cantidad_de_platos: oRaw.Cantidad_de_platos,
                 Rango_de_precios: oRaw.Rango_de_precios,
@@ -151,8 +154,11 @@ sap.ui.define([
                     this.oUpdDialog.open()
                 })
             }
-
+            
             this.oUpdDialog.open()
+            
+
+            
 
             aControls.forEach((oControl) => {
                 oControl.setValueState("None");
@@ -163,7 +169,7 @@ sap.ui.define([
 
 
         },
-        OnValidateDatos: function (aControlsValidate,oInputRankingValidate) {
+        OnValidateDatos: function (aControlsValidate, oInputRankingValidate) {
 
             let bValid = true // Booleano que dira si todos las validaciones son correctas 
 
@@ -359,9 +365,128 @@ sap.ui.define([
 
 
         },
+        OnExportExl: function () {
+            if (!this._otable) {
+                this._otable = this.byId("IdRestaurante")
+            }
+
+            const otable = this._otable
+            const aData = otable.getBinding("rows");
+            const aCols = this.createColumns()
+            const oSettings = {
+                workbook: {
+                    columns: aCols,
+                    hierarchyLevel: "Level"
+                },
+                dataSource: aData,
+                fileName: "Tabla de restaurantes",
+                worker: false
+            }
+            const osheet = new Spreadsheet(oSettings);
+            osheet.build().finally(function () {
+                osheet.destroy()
+            })
+        },
+        createColumns: function () {
+            const aCols = []
+            aCols.push({
+                label: "Nombre",
+                property: "Nombre"
+
+            })
+
+            aCols.push({
+                label: "Ubicacion",
+                property: "Ubicación"
+
+            })
+            aCols.push({
+                label: "Estrellas",
+                property: "Estrellas"
+
+            })
+            aCols.push({
+                label: "Cantidad de Platos",
+                property: "Cantidad_de_platos"
+
+            })
+            aCols.push({
+                label: "Tipo de comida",
+                property: "Tipo_de_comida"
+
+            })
+            aCols.push({
+                label: "Rango de precios",
+                property: "Rango_de_precios"
+
+            })
+            aCols.push({
+                label: "Telefono",
+                property: "Teléfono"
+
+            })
+            aCols.push({
+                label: "Sitio Web",
+                property: "Sitio_web"
+
+            })
+            return aCols;
+        },
+        OnExportPdf: function () {
+
+            sap.m.MessageToast.show("Iniciando descarga PDF")
+            let oRows = []
+            let oColumns = ["Nombre", "Ubicación", "Estrellas", "Cantidad de platos",
+                "Tipo de comida", "Rango de precios", "Teléfono",
+                "Sitio web"]
+
+            let oModel = this.getOwnerComponent().getModel("mModeloDatos");
+            let aRestaurant = oModel.getProperty("/Restaurantes");
+            let Trow;
+
+          
+            
+
+            for (let index = 0; index < aRestaurant.length; index++) {
+                Trow = [aRestaurant[index].Nombre,
+                aRestaurant[index].Ubicación,
+                aRestaurant[index].Estrellas,
+                aRestaurant[index].Cantidad_de_platos,
+                aRestaurant[index].Tipo_de_comida,
+                aRestaurant[index].Rango_de_precios,
+                aRestaurant[index].Teléfono,
+                aRestaurant[index].Sitio_web];
+
+                oRows.push(Trow)
+
+            }
+    
+
+            const doc = new jsPDF({
+                orientation: 'l',
+                unit: 'mm',
+                format: [841.89, 595.28]
+            });
+
+
+            doc.text(10, 10, "Listado de Restaurantes")
+            doc.text(10, 10, "")
+            autoTable(doc, {
+                head: [oColumns],
+                body: oRows
+            });
+
+            //autoTable(doc, { xml: '#IdRestaurante' })
+
+
+            doc.save("prueba1.pdf")
+
+        },
+        onClickCell:function(){
+            MessageToast.show("Se escogio una fila")
+        }
+           
         
-
-
 
     });
 });
