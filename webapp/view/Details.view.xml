@@ -1,0 +1,106 @@
+<mvc:View xmlns:form="sap.ui.layout.form" xmlns:navpopover="sap.ui.comp.navpopover"
+	controllerName="inetum.restaurantes.controller.Details"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+	xmlns:p="sap.m.plugins"
+	height="100%"
+	xmlns:layout="sap.ui.layout"
+	xmlns:semantic="sap.f.semantic">
+
+	<m:Page id="page2" title="Detalles"
+		showHeader="false"
+		enableScrolling="false"
+		class="sapUiContentPadding sapUiResponsivePadding--header 
+				sapUiResponsivePadding--subHeader 
+				sapUiResponsivePadding--content 
+				sapUiResponsivePadding--footer">
+		<ObjectPageLayout id="OPL" >
+			<headerTitle>
+				<ObjectPageDynamicHeaderTitle id="OPDT" >
+					<expandedHeading>
+						<m:Title id="TitleHeader" text="{mModeloDatos>/detallesRestaurante/Nombre}"></m:Title>
+					</expandedHeading>
+					
+					<expandedContent>
+						<m:Text  id="T3"  text="{mModeloDatos>/detallesRestaurante/Ubicación}"/>
+					</expandedContent>
+					<actions>
+						<m:Button id="_IDGenButton6" text="Edit" type="Emphasized" press="OnOpenFragmentUpdate"/>
+					</actions>
+					
+				</ObjectPageDynamicHeaderTitle>
+			</headerTitle>
+
+			<headerContent>
+				<m:FlexBox id="_IDGenFlexBox" wrap="Wrap" fitContainer="true">
+					<m:Avatar id="_IDGenAvatar" class="sapUiSmallMarginEnd" src="sap-icon://customer-and-supplier" displaySize="L" />
+	
+					<layout:VerticalLayout id="_IDGenVerticalLayout1" class="sapUiSmallMarginBeginEnd">
+						<m:Link id="LinkPhone" text="{mModeloDatos>/detallesRestaurante/Teléfono}"/>
+						<m:Link id="WebSiteHeader" text="Sitio web"/>
+					</layout:VerticalLayout>
+	
+					<layout:VerticalLayout id="_IDGenVerticalLayout2" class="sapUiSmallMarginBeginEnd">
+						<m:Label id="TipoComida" text="{mModeloDatos>/detallesRestaurante/Tipo_de_comida}"/>
+						<m:VBox id="_IDGenVBox">
+							<m:Label id="_IDGenLabel8" text='Cantidad de platos: {mModeloDatos>/detallesRestaurante/Cantidad_de_platos}'/>
+							<m:RatingIndicator iconSize="18px" id="RI" value="{mModeloDatos>/detallesRestaurante/Estrellas}"></m:RatingIndicator>
+						</m:VBox>
+					</layout:VerticalLayout>
+	
+					<layout:VerticalLayout id="_IDGenVerticalLayout3" class="sapUiSmallMarginBeginEnd">
+						
+						
+					</layout:VerticalLayout>
+					 
+					<layout:HorizontalLayout id="_IDGenHorizontalLayout1" class="sapUiSmallMarginBeginEnd">
+					<c:Icon id="_IDGenIcon" src="sap-icon://map" color="blue"></c:Icon>
+					<m:VBox id="vbox" width="10px"></m:VBox>
+					<m:Label id="_IDGenLabel9" text='{mModeloDatos>/detallesRestaurante/Ubicación}' />
+					
+					</layout:HorizontalLayout>
+
+				</m:FlexBox>
+			</headerContent>
+
+			<sections>
+				<ObjectPageSection id="OPS" title="Detalles">
+					<subSections>
+						<ObjectPageSubSection id="personalSS1" title="Detalles" titleUppercase="false">
+							<blocks>
+								<form:SimpleForm id="SF"
+											maxContainerCols="2"
+											editable="false"
+											layout="ResponsiveGridLayout"
+											title=""
+											width="auto"
+											class="sapUxAPObjectPageSubSectionAlignContent">	
+										<form:content>
+											<m:Label id="_IDGenLabel11" text="Nombre"/>
+											<m:Text id="_IDGenText1" text="{mModeloDatos>/detallesRestaurante/Nombre}"/>
+											<m:Label id="_IDGenLabel13" text="Location"/>
+											<m:Text id="_IDGenText4" text="{mModeloDatos>/detallesRestaurante/Ubicación}"/>
+											<m:Label id="_IDGenLabel155" text="Cantidad de platos"/>
+											<m:Text id="_IDGenText44" text="{mModeloDatos>/detallesRestaurante/Cantidad_de_platos}"/>
+											<m:Label id="_IDGenLabel1155" text="Rango de precios"/>
+											<m:Text id="_IDGenText5" text="{mModeloDatos>/detallesRestaurante/Rango_de_precios}"/>
+											<m:Label id="_IDGenLabel15" text="Telefono"/>
+											<m:Link id="t" text="{mModeloDatos>/detallesRestaurante/Teléfono}"/>
+											<m:Label id="_IDGenLabel115" text="Sitio Web"/>
+											<m:Link id="w" text="Sitio {mModeloDatos>/detallesRestaurante/Sitio_web}"/>
+											<m:Label id="_IDGenLabel14" text="Estrallas"/>
+											<m:RatingIndicator id="RI1" iconSize="10px" editable="false" value="{mModeloDatos>/detallesRestaurante/Estrellas}"/>
+											
+										</form:content>
+								</form:SimpleForm>
+							</blocks>						
+						</ObjectPageSubSection>
+					</subSections>					
+				</ObjectPageSection>
+			</sections>
+		</ObjectPageLayout>
+	</m:Page>
+</mvc:View>

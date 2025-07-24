@@ -6,20 +6,20 @@
 	xmlns:c="sap.ui.core"
 	xmlns:m="sap.m"
 	xmlns:p="sap.m.plugins"
-	height="50%"
+	height="100%"
+	id="PageMain"
 	xmlns:semantic="sap.f.semantic">
 
 	<m:Page id="page" title="{i18n>title}"
 		showHeader="false"
+		
 		enableScrolling="false"
 		class="sapUiContentPadding sapUiResponsivePadding--header 
 				sapUiResponsivePadding--subHeader 
 				sapUiResponsivePadding--content 
 				sapUiResponsivePadding--footer">
 
-		<m:HeaderContainer id="_IDGenHeaderContainer" >
-			<m:Title id="title2" text="Listado de Restaurantes" level="H3"/> 
-		</m:HeaderContainer>
+		
 
 
 		<!--
@@ -35,9 +35,8 @@
 				selectionMode="Single"
 				ariaLabelledBy="title"
 				selectionBehavior="RowOnly"
-				width="auto"
-				alternateRowColors="true"
-				cellClick="onClickCell"
+				width="100%"
+				cellClick="OnNavDetails"
 			>
 
 				<extension>
@@ -105,6 +104,7 @@
 							press="OnExportPdf"
 							
 						/>
+						
 					</m:OverflowToolbar>
 
 				</extension>

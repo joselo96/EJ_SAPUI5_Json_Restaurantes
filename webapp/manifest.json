@@ -95,12 +95,23 @@
           "target": [
             "Targetmain"
           ]
+        },
+        {
+          "name": "RouteDetails",
+          "pattern": "Details:?query:",
+          "target": [
+             "TargetDetails"
+          ]
         }
       ],
       "targets": {
         "Targetmain": {
           "id": "main",
           "name": "main"
+        },
+        "TargetDetails": {
+            "id": "Details",
+            "name": "Details"
         }
       }
     },

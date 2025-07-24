@@ -482,8 +482,32 @@ sap.ui.define([
             doc.save("prueba1.pdf")
 
         },
-        onClickCell:function(){
-            MessageToast.show("Se escogio una fila")
+        OnNavDetails:function(oEvent){
+
+            
+            let oTable = this.byId("IdRestaurante")
+            let oSelectedIndex = oEvent.getParameters().rowIndex
+            console.log(oSelectedIndex)
+            
+            let oRaw = oTable.getContextByIndex(oSelectedIndex).getProperty()
+
+
+            let oModel = this.getOwnerComponent().getModel("mModeloDatos");
+            oModel.setProperty("/detallesRestaurante", {
+                Nombre: oRaw.Nombre,
+                Ubicación: oRaw.Ubicación,
+                Tipo_de_comida: oRaw.Tipo_de_comida,
+                Estrellas: oRaw.Estrellas,
+                Cantidad_de_platos: oRaw.Cantidad_de_platos,
+                Rango_de_precios: oRaw.Rango_de_precios,
+                Teléfono: oRaw.Teléfono,
+                Sitio_web: oRaw.Sitio_web
+            });
+
+
+            const router = this.getOwnerComponent().getRouter();
+            router.navTo("RouteDetails");
+
         }
            
         

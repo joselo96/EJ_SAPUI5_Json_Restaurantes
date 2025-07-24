@@ -211,5 +211,15 @@
         "Rango_de_precios": "",
         "Teléfono":  null,
         "Sitio_web": ""
+},
+"detallesRestaurante":{
+        "Nombre": "nombrerestaurante",
+        "Tipo_de_comida": "tipocomida",
+        "Ubicación": "ubicacion",
+        "Estrellas": 2,
+        "Cantidad_de_platos": 12,
+        "Rango_de_precios": "Alto",
+        "Teléfono":  3111111111,
+        "Sitio_web": "sitioweb.com"
 }
 }
