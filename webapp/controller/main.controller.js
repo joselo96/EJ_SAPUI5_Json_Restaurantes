@@ -102,9 +102,17 @@ sap.ui.define([
             let oSelectedIndex = oTable.getSelectedIndex()
 
             if (oSelectedIndex === -1 ) {
-                MessageToast.show("Por favor Seleccione un registro")
+                MessageToast.show("Please select a restaurant")
                 return
             }
+
+            let oSelectedIndices = oTable.getSelectedIndices()
+
+            if (oSelectedIndices[1]){
+                MessageToast.show("Para actualizar solo selecicone 1 registro")
+                return
+            }
+
 
             let oRaw = oTable.getContextByIndex(oSelectedIndex).getProperty()
             let oContext = oTable.getContextByIndex(oSelectedIndex);
@@ -341,24 +349,26 @@ sap.ui.define([
         OnDeleteRestaurant: function () {
 
             let oTable = this.byId("IdRestaurante")
-            let oSelectedIndex = oTable.getSelectedIndex()
+            let oSelectedIndices = oTable.getSelectedIndices()
+            //let oSelectedIndex = oTable.getSelectedIndex()
 
-            if (oSelectedIndex === -1) {
+            if ( oSelectedIndices.length == 0 ) {
                 MessageToast.show("Por favor Seleccione un registro")
                 return
             }
-            MessageBox.confirm("¿Está seguro de que desea eliminar este restaurante?", {
+            MessageBox.confirm("¿Está seguro de que desea eliminar estos restaurantes?", {
                 onClose: function (oAction) {
                     if (oAction === MessageBox.Action.OK) {
                         let oTable = this.byId("IdRestaurante")
-                        let oSelectedIndex = oTable.getSelectedIndex()
+                        let oSelectedIndices = oTable.getSelectedIndices().reverse()
                         const oModel = this.getOwnerComponent().getModel("mModeloDatos")
                         const aRestaurantes = oModel.getProperty("/Restaurantes")
-                        //const iIndex = parseInt(sPath.split("/").pop())
-
-                        aRestaurantes.splice(oSelectedIndex, 1)
+                        
+                        oSelectedIndices.forEach((index)=>{
+                            aRestaurantes.splice(index, 1)
+                            })
                         oModel.setProperty("/Restaurantes", aRestaurantes)
-                        MessageToast.show("Restaurante eliminado con exito")
+                        MessageToast.show("Restaurante seleccionado eliminado con exito")
                     }
                 }.bind(this)
             });
@@ -510,7 +520,6 @@ sap.ui.define([
 
         }
            
-        
 
     });
 });
