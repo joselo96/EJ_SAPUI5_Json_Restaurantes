@@ -101,7 +101,7 @@ sap.ui.define([
             let oTable = this.byId("IdRestaurante")
             let oSelectedIndex = oTable.getSelectedIndex()
 
-            if (oSelectedIndex === -1) {
+            if (oSelectedIndex === -1 ) {
                 MessageToast.show("Por favor Seleccione un registro")
                 return
             }

@@ -18,10 +18,6 @@
 				sapUiResponsivePadding--subHeader 
 				sapUiResponsivePadding--content 
 				sapUiResponsivePadding--footer">
-
-		
-
-
 		<!--
 		<m:HeaderContainer id="_IDGenHeaderContainer2" >
 			<c:Icon id="icon" src="sap-icon://competitor" size="80px"></c:Icon>
@@ -32,9 +28,9 @@
 			<Table
 				id="IdRestaurante"
 				rows="{mModeloDatos>/Restaurantes}"
-				selectionMode="Single"
+				selectionMode="MultiToggle"
 				ariaLabelledBy="title"
-				selectionBehavior="RowOnly"
+				selectionBehavior="Row"
 				width="100%"
 				cellClick="OnNavDetails"
 			>
@@ -55,19 +51,19 @@
 						<m:SearchField
 							id="SfNombre"
 							liveChange="onFilterName"
-							placeholder="Filtro por nombre"
+							placeholder="{i18n>FiltroNombre}"
 							width="15%"
 						/>
 						<m:SearchField
 							id="SfUbication"
 							liveChange="onFilterUbication"
-							placeholder="Filtro por Ubicación"
+							placeholder="{i18n>FiltroUbicacion}"
 							width="15%"
 						/>
 						<m:Button
 							id="_IDGenButton77"
 							icon="sap-icon://add-product"
-							tooltip="Agregar Producto"
+							tooltip="{i18n>AddRestaurant}"
 							press="OnOpenFragment"
 							type="Accept"
 							
@@ -76,14 +72,14 @@
 							id="_IDGenButton8"
 							icon="sap-icon://synchronize"
 							type="Attention"
-							tooltip="Actualizar Producto"
+							tooltip="{i18n>UpdateRestaurant}"
 							press="OnOpenFragmentUpdate"
 							
 						/>
 						<m:Button
 							id="_IDGenButton1"
 							icon="sap-icon://delete"
-							tooltip="Eliminar Producto"
+							tooltip="{i18n>EliminarProducto}"
 							type="Reject"
 							press="OnDeleteRestaurant"
 							
@@ -91,7 +87,7 @@
 						<m:Button
 							id="_IDGenButton12"
 							icon="sap-icon://excel-attachment"
-							tooltip="Exportar a Excel"
+							tooltip="{i18n>ExportarExcel}"
 							type="Default"
 							press="OnExportExl"
 							
@@ -99,7 +95,7 @@
 						<m:Button
 							id="_IDGenButton123"
 							icon="sap-icon://pdf-attachment"
-							tooltip="Exportar a pdf"
+							tooltip="{i18n>ExportarPdf}"
 							type="Default"
 							press="OnExportPdf"
 							
@@ -112,21 +108,21 @@
 				<columns>
 					<Column id="_IDGenColumn" width="auto" showSortMenuEntry="false"
 						sortProperty="Nombre" hAlign="Center">
-						<m:Label id="_IDGenLabel1" text="Nombre" />
+						<m:Label id="_IDGenLabel1" text="{i18n>Nombre}" />
 						<template>
 							<m:Text id="_IDGenText" text="{mModeloDatos>Nombre}" wrapping="false" />
 						</template>
 					</Column>
 					<Column id="_IDGen1Column" width="auto" showSortMenuEntry="false"
 						sortProperty="Nombre" hAlign="Center">
-						<m:Label id="_IDGen1Label1" text="Tipo de Comida" />
+						<m:Label id="_IDGen1Label1" text="{i18n>TipoComida}" />
 						<template>
 							<m:Text id="_IDGen1Text" text="{mModeloDatos>Tipo_de_comida}" wrapping="false" />
 						</template>
 					</Column>
 					<Column id="_IDGenColumn2" width="auto" showSortMenuEntry="false"
 						sortProperty="Nombre" hAlign="Center">
-						<m:Label id="_IDGenLabel12" text="Ubicación" />
+						<m:Label id="_IDGenLabel12" text="{i18n>Ubicacion}" />
 						<template>
 							<m:Text id="_IDGenText2" text="{mModeloDatos>Ubicación}"
 								wrapping="false" />
@@ -134,7 +130,7 @@
 					</Column>
 
 					<Column id="_IDGenColumn3" hAlign="Center" width="auto">
-						<m:Label id="_IDGenLabel2" text="Estrellas" />
+						<m:Label id="_IDGenLabel2" text="{i18n>Estrellas}" />
 						<template>
 							<m:RatingIndicator id="Rating" value="{mModeloDatos>Estrellas}"
 								displayOnly="true" iconSize="15px" />
@@ -142,7 +138,7 @@
 					</Column>
 
 					<Column id="_IDGenColumn4" hAlign="Center" width="auto">
-						<m:Label id="_IDGenLabel4" text="Patos Disponibles" />
+						<m:Label id="_IDGenLabel4" text="{i18n>PatosDisponibles}" />
 						<template>
 							<m:Text id="_IDGenText23" text="{mModeloDatos>Cantidad_de_platos}"
 								wrapping="false" textAlign="Right" />
@@ -150,7 +146,7 @@
 					</Column>
 
 					<Column id="_IDGenColumn5" hAlign="Center" width="auto">
-						<m:Label id="_IDGenLabel44" text="Precios" />
+						<m:Label id="_IDGenLabel44" text="{i18n>Precios}" />
 						<template>
 							<m:ObjectStatus id="_IDGenObjectStatus"
 								text="{mModeloDatos>Rango_de_precios}"
@@ -163,14 +159,14 @@
 					</Column>
 
 					<Column id="_IDGenColumny4" hAlign="Center" width="auto" sortProperty="phone">
-						<m:Label id="_IDGenLabfel4" text="Telefono" />
+						<m:Label id="_IDGenLabfel4" text="{i18n>Telefono}" />
 						<template>
 							<m:ObjectNumber id="_IDGenObjectNumber" number="{mModeloDatos>Teléfono}"
 								textAlign="Center" />
 						</template>
 					</Column>
 					<Column id="_IDGenColumn1" hAlign="Center" width="15rem">
-						<m:Label id="_IDGenLabel" text="Sitio Web" />
+						<m:Label id="_IDGenLabel" text="{i18n>SitioWeb}" />
 						<template>
 							<m:Link id="_IDGenText3" text="{mModeloDatos>Sitio_web}" />
 						</template>

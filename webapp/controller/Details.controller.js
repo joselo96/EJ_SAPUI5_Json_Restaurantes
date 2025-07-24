@@ -10,6 +10,11 @@ sap.ui.define([
           let aRestaurant = oModel.getProperty("/detallesRestaurante");
           console.log(aRestaurant)
                     
-        }
+        },
+        
+
+
+
+    
     });
   });

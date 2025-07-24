@@ -8,9 +8,10 @@
 	xmlns:p="sap.m.plugins"
 	height="100%"
 	xmlns:layout="sap.ui.layout"
-	xmlns:semantic="sap.f.semantic">
+	xmlns:semantic="sap.f.semantic"
+	>
 
-	<m:Page id="page2" title="Detalles"
+	<m:Page id="page2" title="{i18n>Detalles}"
 		showHeader="false"
 		enableScrolling="false"
 		class="sapUiContentPadding sapUiResponsivePadding--header 
@@ -28,7 +29,7 @@
 						<m:Text  id="T3"  text="{mModeloDatos>/detallesRestaurante/Ubicación}"/>
 					</expandedContent>
 					<actions>
-						<m:Button id="_IDGenButton6" text="Edit" type="Emphasized" press="OnOpenFragmentUpdate"/>
+					<!-- 	<m:Button id="_IDGenButton6" text="Edit" type="Emphasized" press="OnOpenFragmentUpdate"/>  -->
 					</actions>
 					
 				</ObjectPageDynamicHeaderTitle>
@@ -40,13 +41,13 @@
 	
 					<layout:VerticalLayout id="_IDGenVerticalLayout1" class="sapUiSmallMarginBeginEnd">
 						<m:Link id="LinkPhone" text="{mModeloDatos>/detallesRestaurante/Teléfono}"/>
-						<m:Link id="WebSiteHeader" text="Sitio web"/>
+						<m:Link id="WebSiteHeader" text="{mModeloDatos>/detallesRestaurante/Sitio_web}"/>
 					</layout:VerticalLayout>
 	
 					<layout:VerticalLayout id="_IDGenVerticalLayout2" class="sapUiSmallMarginBeginEnd">
-						<m:Label id="TipoComida" text="{mModeloDatos>/detallesRestaurante/Tipo_de_comida}"/>
+						<m:Label id="TipoComida" text='{i18n>TipoComida}:  {mModeloDatos>/detallesRestaurante/Tipo_de_comida}'/>
 						<m:VBox id="_IDGenVBox">
-							<m:Label id="_IDGenLabel8" text='Cantidad de platos: {mModeloDatos>/detallesRestaurante/Cantidad_de_platos}'/>
+							<m:Label id="_IDGenLabel8" text='{i18n>PatosDisponibles}: {mModeloDatos>/detallesRestaurante/Cantidad_de_platos}'/>
 							<m:RatingIndicator iconSize="18px" id="RI" value="{mModeloDatos>/detallesRestaurante/Estrellas}"></m:RatingIndicator>
 						</m:VBox>
 					</layout:VerticalLayout>
@@ -67,9 +68,9 @@
 			</headerContent>
 
 			<sections>
-				<ObjectPageSection id="OPS" title="Detalles">
+				<ObjectPageSection id="OPS" title="{i18n>Detalles}">
 					<subSections>
-						<ObjectPageSubSection id="personalSS1" title="Detalles" titleUppercase="false">
+						<ObjectPageSubSection id="personalSS1" title="{i18n>Detalles}" titleUppercase="false">
 							<blocks>
 								<form:SimpleForm id="SF"
 											maxContainerCols="2"
@@ -79,19 +80,19 @@
 											width="auto"
 											class="sapUxAPObjectPageSubSectionAlignContent">	
 										<form:content>
-											<m:Label id="_IDGenLabel11" text="Nombre"/>
+											<m:Label id="_IDGenLabel11" text="{i18n>Nombre}"/>
 											<m:Text id="_IDGenText1" text="{mModeloDatos>/detallesRestaurante/Nombre}"/>
-											<m:Label id="_IDGenLabel13" text="Location"/>
+											<m:Label id="_IDGenLabel13" text="{i18n>Ubicaion}"/>
 											<m:Text id="_IDGenText4" text="{mModeloDatos>/detallesRestaurante/Ubicación}"/>
-											<m:Label id="_IDGenLabel155" text="Cantidad de platos"/>
+											<m:Label id="_IDGenLabel155" text="{i18n>PlatosDisponibles}"/>
 											<m:Text id="_IDGenText44" text="{mModeloDatos>/detallesRestaurante/Cantidad_de_platos}"/>
-											<m:Label id="_IDGenLabel1155" text="Rango de precios"/>
+											<m:Label id="_IDGenLabel1155" text="{i18n>Precios}"/>
 											<m:Text id="_IDGenText5" text="{mModeloDatos>/detallesRestaurante/Rango_de_precios}"/>
-											<m:Label id="_IDGenLabel15" text="Telefono"/>
+											<m:Label id="_IDGenLabel15" text="{i18n>Telefono}"/>
 											<m:Link id="t" text="{mModeloDatos>/detallesRestaurante/Teléfono}"/>
-											<m:Label id="_IDGenLabel115" text="Sitio Web"/>
+											<m:Label id="_IDGenLabel115" text="{i18n>SitioWeb}"/>
 											<m:Link id="w" text="Sitio {mModeloDatos>/detallesRestaurante/Sitio_web}"/>
-											<m:Label id="_IDGenLabel14" text="Estrallas"/>
+											<m:Label id="_IDGenLabel14" text="{i18n>Estrellas}"/>
 											<m:RatingIndicator id="RI1" iconSize="10px" editable="false" value="{mModeloDatos>/detallesRestaurante/Estrellas}"/>
 											
 										</form:content>
